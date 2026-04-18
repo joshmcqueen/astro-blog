@@ -23,6 +23,10 @@ This is an **Astro 6** blog using the Content Collections API (v2 loader syntax)
 
 **Layouts/Components:** `src/layouts/BlogPost.astro` wraps individual posts. Shared UI lives in `src/components/` (BaseHead, Header, Footer, etc.). Global styles are in `src/styles/`.
 
-**Site config:** Update `src/consts.ts` for `SITE_TITLE` / `SITE_DESCRIPTION`, and `astro.config.mjs` for the production `site` URL (currently `https://example.com`).
+**Site config:** Update `src/consts.ts` for `SITE_TITLE` / `SITE_DESCRIPTION`. Production URL is `https://joshmcqueen.com` (set in `astro.config.mjs`).
 
-**Integrations:** MDX (`@astrojs/mdx`), Sitemap (`@astrojs/sitemap`), RSS (`src/pages/rss.xml.js`), and image optimization via `sharp`. The Atkinson font is served locally via Astro's font provider with CSS variable `--font-atkinson`.
+**Integrations:** MDX (`@astrojs/mdx`), Sitemap (`@astrojs/sitemap`), RSS (`src/pages/rss.xml.js`), and image optimization via `sharp`. The Atkinson font is served locally via `fontProviders.local()` with CSS variable `--font-atkinson`.
+
+## Deployment
+
+Docker multi-stage build (Node 22-slim build → nginx:alpine serve). Pushing to `main` triggers a GitHub webhook to Dokploy, which rebuilds the container. `Dockerfile` and `nginx.conf` are in the repo root.
