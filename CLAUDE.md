@@ -30,3 +30,5 @@ This is an **Astro 6** blog using the Content Collections API (v2 loader syntax)
 ## Deployment
 
 Docker multi-stage build (Node 22-slim build → nginx:alpine serve). Pushing to `main` triggers a GitHub webhook to Dokploy, which rebuilds the container. `Dockerfile` and `nginx.conf` are in the repo root.
+
+The site sits behind Cloudflare (DNS proxy + CDN). nginx access logs are disabled (`access_log off;`) to avoid noise in Dokploy; only warn-level errors are logged. Real client IPs arrive via `CF-Connecting-IP` header, not the TCP remote address.
