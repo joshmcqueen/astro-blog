@@ -1,6 +1,6 @@
 # joshmcqueen.com
 
-Personal blog built with [Astro 6](https://astro.build). Deployed to [joshmcqueen.com](https://joshmcqueen.com) via Dokploy on every push to `main`.
+Personal blog built with [Astro 7](https://astro.build). Deployed to [joshmcqueen.com](https://joshmcqueen.com) via Dokploy on every push to `main`.
 
 ## Commands
 

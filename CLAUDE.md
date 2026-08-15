@@ -15,7 +15,7 @@ Node >=22.12.0 required. No test suite is configured.
 
 ## Architecture
 
-This is an **Astro 6** blog using the Content Collections API (v2 loader syntax).
+This is an **Astro 7** blog using the Content Collections API (v2 loader syntax).
 
 **Routing:** File-based. Pages in `src/pages/` map directly to routes. Blog post slugs derive from filenames via `[...slug].astro`.
 
